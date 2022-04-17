@@ -7,40 +7,54 @@
 
 // NON COMMENTARE
 let output = document.querySelector('.output');
-const number =[];
+let number;
 let sum = 0;
 let count = 0;
+
 // FINE
 
 // VERSIONE FOR
 
 /*
 for (let i = 0; i < 5; i++) {
-  number.push(parseInt(prompt('Inserisci un numero')));
-  
-}
-for (let i = 0; i < number.length; i++) {
-  sum += number[i];
+  number = parseInt(prompt('Inserisci un numero'));
+  console.log(number);
+  if(!isNaN(number)){
+    sum += number;
+    count++;
+  }else{
+    while (isNaN(number)) {
+      number = parseInt(prompt('Inserisci un numero valido!'));
+    }
+    sum += number;
+    count++;
+  }
 }
 */
+
 
 
 // VERSIONE WHILE
 /*
-while(count < 5){
-  number.push(parseInt(prompt('Inserisci un numero')));
-  console.log(number)
-  count++;
-
-}
-count = 0;
-while(count < number.length){
-  let element = number[count];
-  count++;
-
-  sum += element;
+while (count != 5) {
+  number = parseInt(prompt('Inserisci un numero'));
+  console.log(number);
+  if(!isNaN(number)){
+    sum += number;
+    count++;
+  }else{
+    while (isNaN(number)) {
+      number = parseInt(prompt('Inserisci un numero valido!'));
+    }
+    sum += number;
+    count++;
+  }
 }
 */
 
+
+
 // NON COMMENTARE
-output.innerHTML = `La somma dei numeri inseriti è ${sum}`;
+if(count == 5){
+  output.innerHTML = `La somma dei numeri inseriti è ${sum}`;
+}
